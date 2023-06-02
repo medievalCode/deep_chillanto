@@ -15,7 +15,10 @@ afuera de esta carpeta,
 ![img.png](images/img.png)
 
 La carpeta `chillanto` debe contener todas las muestras de llanto. El clasificador
-principal está programado para clasificar 5 clases: 
+principal está programado para clasificar 5 clases, pero esto depende de las carpetas.
+Si solamente hay 3 carpetas, entonces serán 3 clases. Si se requieren mas o menos
+clases, organicen las carpetas por clase, y borren el archivo `chillanto_metadata.csv`
+para generar uno nuevo.
 
 * asphyxia
 * deaf
@@ -44,4 +47,11 @@ necesario ejecutar el codigo `test_model.py`
 
 ```commandline
 python test_model.py
+```
+
+Si se agregaron o eliminaron clases, entonces se debe de cambiar la linea 39 
+en el código `test_model.py` a las clases existentes.
+
+```python
+labels = numpy.array(["asphyxia", "deaf", "normal", "hunger", "pain"])
 ```
