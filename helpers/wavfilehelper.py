@@ -17,4 +17,4 @@ class WavFileHelper:
         bit_depth_string = fmt[22:24]
         bit_depth = struct.unpack("<H", bit_depth_string)[0]
 
-        return (num_channels, sample_rate, bit_depth)
+        return num_channels, sample_rate, bit_depth

@@ -23,13 +23,13 @@ def extract_features(file_name='', max_pad_len=50, mfcc_num=40):
             n_mfcc=mfcc_num)
         pad_width = max_pad_len - mfccs.shape[1]
         mfccs_padded = np.pad(mfccs,
-                             pad_width=((0, 0),
-                                        (0, pad_width)),
-                             mode='constant')
+                              pad_width=((0, 0),
+                                         (0, pad_width)),
+                              mode='constant')
     except Exception as e:
         print(f"Error encountered while parsing file: {file_name}\n{e}")
         return None
-    # Return mfccs_padded if the sounds segments have a variable length
+
     return mfccs_padded
 
 
