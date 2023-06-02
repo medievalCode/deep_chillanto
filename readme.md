@@ -2,8 +2,8 @@
 
 Los paquetes necesarios para correr el código incluido en este projecto
 están en `requirements.txt`. La mejor opción para instalar estos paquetes
-es crear un nuevo ambiente virtual e instalar los paquetes dentro de ese
-ambiente;
+es crear un nuevo ambiente virtual con python 3.11 e instalar los paquetes 
+dentro de ese ambiente;
 
 ```commandline
 pip install -r requirements.txt
