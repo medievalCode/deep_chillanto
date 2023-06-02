@@ -1,5 +1,14 @@
 # Classificación de la base de datos Chillanto
 
+Los paquetes necesarios para correr el código incluido en este projecto
+están en `requirements.txt`. La mejor opción para instalar estos paquetes
+es crear un nuevo ambiente virtual e instalar los paquetes dentro de ese
+ambiente;
+
+```commandline
+pip install -r requirements.txt
+```
+
 Antes de correr este código es necesario tener un folder llamado `chillanto`
 afuera de esta carpeta, 
 
