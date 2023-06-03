@@ -43,17 +43,10 @@ python main.py
 Después de que el modelo termina de entrenar, se guardarán dos versiones del modelo en
 la carpeta `saved_models`. Uno en formato `hdf5` y el otro como archivo `json` y `h5`.
 Para cargar el modelo entrenado y probarlo para generar una matriz de confusión, es 
-necesario ejecutar el codigo `test_model.py`
+necesario ejecutar el codigo `test_model.py`;
 
 ```commandline
 python test_model.py
-```
-
-Si se agregaron o eliminaron clases, entonces se debe de cambiar la linea 39 
-en el código `test_model.py` a las clases existentes.
-
-```python
-labels = np.array(["asphyxia", "deaf", "normal", "hunger", "pain"])
 ```
 
 ![img_3.png](images/img_3.png)

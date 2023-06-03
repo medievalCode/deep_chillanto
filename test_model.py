@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from keras.models import model_from_json
 from helpers.utilities import plot_confusion_matrix, load_chillanto
 
@@ -8,7 +9,10 @@ np.random.seed(seed)
 num_rows = 40
 num_columns = 44
 num_channels = 1
-num_labels = 5
+
+metadata = pd.read_csv('chillanto_metadata.csv')
+labels = metadata.class_name.unique()
+num_labels = len(labels)
 
 # load json and create model
 json_file = open("saved_models/model.json", "r")
@@ -33,9 +37,6 @@ x_test = x_test.reshape(x_test.shape[0], num_rows, num_columns, num_channels)
 
 score = loaded_model.evaluate(x_test, y_test, verbose=0)
 print(f"Testing Accuracy: {score[1]}")
-
-# Plot confusion matrices
-labels = np.array(["asphyxia", "deaf", "normal", "hunger", "pain"])
 
 y_predict = loaded_model.predict(x_test, verbose=1)
 ax = plot_confusion_matrix(
