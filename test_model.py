@@ -1,11 +1,10 @@
 import matplotlib.pyplot as plt
-import numpy
+import numpy as np
 from keras.models import model_from_json
 from helpers.utilities import plot_confusion_matrix, load_chillanto
 
 seed = 2023
-numpy.random.seed(seed)
-
+np.random.seed(seed)
 num_rows = 40
 num_columns = 44
 num_channels = 1
@@ -36,7 +35,7 @@ score = loaded_model.evaluate(x_test, y_test, verbose=0)
 print(f"Testing Accuracy: {score[1]}")
 
 # Plot confusion matrices
-labels = numpy.array(["asphyxia", "deaf", "normal", "hunger", "pain"])
+labels = np.array(["asphyxia", "deaf", "normal", "hunger", "pain"])
 
 y_predict = loaded_model.predict(x_test, verbose=1)
 ax = plot_confusion_matrix(

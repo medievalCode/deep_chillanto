@@ -18,7 +18,7 @@ La carpeta `chillanto` debe contener todas las muestras de llanto. El clasificad
 principal está programado para clasificar 5 clases, pero esto depende de las carpetas.
 Si solamente hay 3 carpetas, entonces serán 3 clases. Si se requieren mas o menos
 clases, organicen las carpetas por clase, y borren el archivo `chillanto_metadata.csv`
-para generar uno nuevo.
+para generar uno nuevo. El modelo que entrené tiene estas 5 clases;
 
 * asphyxia
 * deaf
@@ -29,7 +29,7 @@ para generar uno nuevo.
 Entonces dentro de esta carpeta deben estar otras carpetas con las muestras de llanto
 separadas por clase en cada una de las carpetas. 
 
-![img.png](images/img_2.png)
+![img_2.png](images/img_2.png)
 
 Incluyo el archivo `chillanto_metadata.csv` para resolver cualquier duda de la organizacion
 de las carpetas.
@@ -53,5 +53,7 @@ Si se agregaron o eliminaron clases, entonces se debe de cambiar la linea 39
 en el código `test_model.py` a las clases existentes.
 
 ```python
-labels = numpy.array(["asphyxia", "deaf", "normal", "hunger", "pain"])
+labels = np.array(["asphyxia", "deaf", "normal", "hunger", "pain"])
 ```
+
+![img_3.png](images/img_3.png)
