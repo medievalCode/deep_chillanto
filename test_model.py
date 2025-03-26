@@ -29,18 +29,18 @@ loaded_model.compile(
 print("Created model and loaded weights from file")
 
 # load chillanto dataset
-_, x_test, _, y_test, yy, _, features_df = load_chillanto(
+x_train, x_test, y_train, y_test, yy, _, features_df = load_chillanto(
     seed, max_pad_len=num_columns, mfcc_num=num_rows
 )
 
-x_test = x_test.reshape(x_test.shape[0], num_rows, num_columns, num_channels)
+x_train = x_train.reshape(x_train.shape[0], num_rows, num_columns, num_channels)
 
-score = loaded_model.evaluate(x_test, y_test, verbose=0)
+score = loaded_model.evaluate(x_train, y_train, verbose=0)
 print(f"Testing Accuracy: {score[1]}")
 
-y_predict = loaded_model.predict(x_test, verbose=1)
+y_predict = loaded_model.predict(x_train, verbose=1)
 ax = plot_confusion_matrix(
-    y_test.argmax(axis=1),
+    y_train.argmax(axis=1),
     y_predict.argmax(axis=1),
     labels,
     normalize=True,
