@@ -1,24 +1,21 @@
-# Classificación de la base de datos Chillanto
+# Classification of the Baby Chillanto Data Base  
 
-Los paquetes necesarios para correr el código incluido en este projecto
-están en `requirements.txt`. La mejor opción para instalar estos paquetes
-es crear un nuevo ambiente virtual con python 3.11 e instalar los paquetes 
-dentro de ese ambiente;
+The necessary packages to run the code included in this project are listed in `requirements.txt`. 
+The best option to install these packages is to create a new virtual environment with Python 3.11 
+and install the packages within that environment.
 
 ```commandline
 pip install -r requirements.txt
 ```
 
-Antes de correr este código es necesario tener un folder llamado `chillanto`
-afuera de esta carpeta, 
+Before running this code, you need to have a folder named chillanto outside this directory.
 
 ![img.png](images/img.png)
 
-La carpeta `chillanto` debe contener todas las muestras de llanto. El clasificador
-principal está programado para clasificar 5 clases, pero esto depende de las carpetas.
-Si solamente hay 3 carpetas, entonces serán 3 clases. Si se requieren mas o menos
-clases, organicen las carpetas por clase, y borren el archivo `chillanto_metadata.csv`
-para generar uno nuevo. El modelo que entrené tiene estas 5 clases;
+The Chillanto folder must contain all the crying samples. The main classifier is programmed to classify 
+5 classes, but this depends on the folders. If there are only 3 folders, then there will be 3 classes. 
+If more or fewer classes are needed, organize the folders by class and delete the `chillanto_metadata.csv` 
+file to generate a new one. The model I trained has these 5 classes:
 
 * asphyxia
 * deaf
@@ -26,26 +23,23 @@ para generar uno nuevo. El modelo que entrené tiene estas 5 clases;
 * hunger
 * pain
 
-Entonces dentro de esta carpeta deben estar otras carpetas con las muestras de llanto
-separadas por clase en cada una de las carpetas. 
+Inside this folder, there should be other folders containing the crying samples, separated by class in 
+each folder.
 
 ![img_2.png](images/img_2.png)
 
-Incluyo el archivo `chillanto_metadata.csv` para resolver cualquier duda de la organizacion
-de las carpetas.
+I have included the `chillanto_metadata.csv` file to clarify any doubts regarding the folder organization.
+Once the samples are ready, simply run the main.py script:
 
-Cuando las muestras estén listas, simplemente se debe ejecutar el codigo `main.py`;
-
-```commandline
+```shell
 python main.py
 ```
 
-Después de que el modelo termina de entrenar, se guardarán dos versiones del modelo en
-la carpeta `saved_models`. Uno en formato `hdf5` y el otro como archivo `json` y `h5`.
-Para cargar el modelo entrenado y probarlo para generar una matriz de confusión, es 
-necesario ejecutar el codigo `test_model.py`;
+After the model finishes training, two versions of the model will be saved in the saved_models 
+folder—one in hdf5 format and the other as json and h5 files. To load the trained model and test it to 
+generate a confusion matrix, run the test_model.py script:
 
-```commandline
+```shell
 python test_model.py
 ```
 
