@@ -35,8 +35,8 @@ Once the samples are ready, simply run the main.py script:
 python main.py
 ```
 
-After the model finishes training, two versions of the model will be saved in the saved_models 
-folder—one in hdf5 format and the other as json and h5 files. To load the trained model and test it to 
+After the model finishes training, two versions of the model will be saved in the `saved_models` 
+folder; one in hdf5 format and the other as json and h5 files. To load the trained model and test it to 
 generate a confusion matrix, run the test_model.py script:
 
 ```shell
